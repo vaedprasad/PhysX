@@ -7,10 +7,10 @@
  */
 public class PhyCalc
 {
-    WolfInter Cal = new WolfInter()
-    public static String forceToPos(String F, String m)
+    WolfInter Cal = new WolfInter();
+    public String forceToPos(String F, String m)
     {
-        return Cal.useFunc("derivative "+F+"/"+m);
+        return Cal.useFunc("integral integral "+F+"/"+m);
     }
     public static double impulseToVel(double I, double m)
     {

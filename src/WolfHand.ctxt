@@ -7,4 +7,6 @@ comment2.params=uri\ localName\ qName
 comment2.target=void\ endElement(java.lang.String,\ java.lang.String,\ java.lang.String)
 comment3.params=ch\ start\ length
 comment3.target=void\ characters(char[],\ int,\ int)
-numComments=4
+comment4.params=
+comment4.target=java.lang.String\ getAns()
+numComments=5

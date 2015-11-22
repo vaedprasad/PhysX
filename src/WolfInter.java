@@ -6,8 +6,9 @@ import org.xml.sax.*;
 import org.xml.sax.helpers.*;
 public class WolfInter
 {
-    public static void useFunc(String input)
+    public static String useFunc(String input)
     {
+        System.out.println(input);
         String xmlFile = "";
         String output;
         System.out.println("\f");
@@ -18,13 +19,16 @@ public class WolfInter
             factory.setNamespaceAware(true);
             SAXParser parser = factory.newSAXParser();
             XMLReader reader = parser.getXMLReader();
-            reader.setContentHandler(new WolfHand());
+            WolfHand hand = new WolfHand();
+            reader.setContentHandler(hand);
             reader.parse(new InputSource(reponce));
+            return hand.getAns();
         } 
         catch (Exception e)
         {
             System.out.println(e);
         }
+        return "";
     }
 
 }
