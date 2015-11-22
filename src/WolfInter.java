@@ -17,16 +17,7 @@ public class WolfInter
             factory.setNamespaceAware(true);
             SAXParser parser = factory.newSAXParser();
             XMLReader reader = parser.getXMLReader();
-            reader.setContentHandler(new DefaultHandler() {
-                    public void startElement(String uri,
-                    String localName,
-                    String qName,
-                    Attributes attributes)
-                    throws SAXException{
-                        System.out.println(localName);
-                    }
-
-                });
+            reader.setContentHandler(new WolfHand());
             reader.parse(new InputSource(reponce));
         } 
         catch (Exception e)

@@ -1,6 +1,4 @@
 #BlueJ class context
 comment0.params=input
 comment0.target=void\ useFunc(java.lang.String)
-comment1.params=uri\ localName\ qName\ attributes
-comment1.target=void\ startElement(java.lang.String,\ java.lang.String,\ java.lang.String,\ org.xml.sax.Attributes)
-numComments=2
+numComments=1

@@ -1,33 +1,63 @@
-
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.io.*; 
+import javax.xml.parsers.*;
+import org.xml.sax.*;
+import org.xml.sax.helpers.*;
+import java.util.*;
 /**
  * Write a description of class WolfHand here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class WolfHand
+public class WolfHand extends DefaultHandler
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class WolfHand
-     */
-    public WolfHand()
+    boolean inResults;
+    boolean inPlainText;
+    public void startDocument()
     {
-        // initialise instance variables
-        x = 0;
+        inResults = false;
+        inPlainText = false;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    public void startElement(String uri, String localName,String qName,Attributes attributes)throws SAXException{
+        if(localName.equals("pod"))
+        {
+            if(attributes.getValue("id").equals("Result"))
+            {
+                inResults = true;
+            }
+        }
+        else if(localName.equals("plaintext") && inResults)
+        {
+            inPlainText = true;
+        }
+        else
+        {
+
+        }
+    }
+    public void endElement(String uri, String localName, String qName)throws SAXException
     {
-        // put your code here
-        return x + y;
+        if(localName.equals("pod") && inResults)
+        {
+            inResults = false;
+        }
+        else if(localName.equals("plaintext") && inResults)
+        {
+            inPlainText = false;
+        }
+        else
+        {
+            
+        }
+    }
+    public void characters(char[] ch, int start, int length)throws SAXException
+    {
+        if(inPlainText && inResults)
+        {
+            System.out.println(Arrays.copyOfRange(ch, start, start + length));
+        }
     }
 }
