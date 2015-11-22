@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=F\ m
+comment0.target=double\ forceToAcc(double,\ double)
+comment1.params=I\ m
+comment1.target=double\ impulseToVel(double,\ double)
+numComments=2
