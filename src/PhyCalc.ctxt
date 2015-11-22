@@ -3,4 +3,6 @@ comment0.params=F\ m
 comment0.target=double\ forceToAcc(double,\ double)
 comment1.params=I\ m
 comment1.target=double\ impulseToVel(double,\ double)
-numComments=2
+comment2.params=val1\ val2\ res
+comment2.target=double\ der(double,\ double,\ double)
+numComments=3

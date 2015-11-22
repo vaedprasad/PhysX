@@ -15,4 +15,9 @@ public class PhyCalc
     {
         return I/m;
     }
+    public static double der(double val1, double val2, double res)
+    {
+        return (val2 - val1)/res;
+    }
+    
 }
