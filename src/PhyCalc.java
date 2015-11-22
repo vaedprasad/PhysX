@@ -7,9 +7,10 @@
  */
 public class PhyCalc
 {
-    public static double forceToAcc(double F, double m)
+    WolfInter Cal = new WolfInter()
+    public static String forceToPos(String F, String m)
     {
-        return F/m;
+        return Cal.useFunc("derivative "+F+"/"+m);
     }
     public static double impulseToVel(double I, double m)
     {
@@ -19,5 +20,8 @@ public class PhyCalc
     {
         return (val2 - val1)/res;
     }
-    
+    public static double integ(double val1, double val2, double res)
+    {
+        return (val2*res - val1*res);
+    }
 }
