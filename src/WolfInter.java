@@ -1,33 +1,38 @@
-
-/**
- * Write a description of class WolfInter here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.io.*; 
+import javax.xml.parsers.*;
+import org.xml.sax.*;
+import org.xml.sax.helpers.*;
 public class WolfInter
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class WolfInter
-     */
-    public WolfInter()
+    public static void useFunc(String input)
     {
-        // initialise instance variables
-        x = 0;
+        String xmlFile = "";
+        String output;
+        try {
+            URL url = new URL("http://api.wolframalpha.com/v2/query?input="+input+"&appid=8EXQE5-6LURH4LLPH");
+            BufferedReader reponce = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+            SAXParserFactory factory = SAXParserFactory.newInstance();
+            factory.setNamespaceAware(true);
+            SAXParser parser = factory.newSAXParser();
+            XMLReader reader = parser.getXMLReader();
+            reader.setContentHandler(new DefaultHandler() {
+                    public void startElement(String uri,
+                    String localName,
+                    String qName,
+                    Attributes attributes)
+                    throws SAXException{
+                        System.out.println(localName);
+                    }
+
+                });
+            reader.parse(new InputSource(reponce));
+        } 
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
 }
