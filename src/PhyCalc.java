@@ -1,4 +1,4 @@
-
+import java.net.URLEncoder;
 /**
  * Write a description of class PhyCalc here.
  * 
@@ -8,20 +8,39 @@
 public class PhyCalc
 {
     WolfInter Cal = new WolfInter();
-    public String forceToPos(String F, String m)
+    public String forceToAcc(String F, String m)
     {
-        return Cal.useFunc("integral integral "+F+"/"+m);
+        try{
+            return Cal.useFunc(URLEncoder.encode(F +"/"+m, "UTF-8"));
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        return "";
     }
-    public static double impulseToVel(double I, double m)
+
+    public String impulseToVel(String I, String m)
     {
-        return I/m;
+        try{
+            return Cal.useFunc(URLEncoder.encode(I +"/"+m, "UTF-8"));
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        return "";
     }
-    public static double der(double val1, double val2, double res)
+
+    public String accToPos(String a)
     {
-        return (val2 - val1)/res;
-    }
-    public static double integ(double val1, double val2, double res)
-    {
-        return (val2*res - val1*res);
+        try{
+            return Cal.useFunc(URLEncoder.encode("integral " + Cal.useFunc(URLEncoder.encode("integral " + a, "UTF-8")), "UTF-8"));
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        return "";
     }
 }

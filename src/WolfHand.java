@@ -26,7 +26,7 @@ public class WolfHand extends DefaultHandler
     public void startElement(String uri, String localName,String qName,Attributes attributes)throws SAXException{
         if(localName.equals("pod"))
         {
-            if(attributes.getValue("id").equals("Result")|| attributes.getValue("id").equals("Indefinite integral") || attributes.getValue("id").equals("Derivative"))
+            if(attributes.getValue("id").equals("Result")|| attributes.getValue("id").equals("IndefiniteIntegral") || attributes.getValue("id").equals("Input"))
             {
                 inResults = true;
             }
@@ -44,7 +44,7 @@ public class WolfHand extends DefaultHandler
     {
         if(localName.equals("pod") && inResults)
         {
-            inResults = false;
+            inResults  = false;
         }
         else if(localName.equals("plaintext") && inResults)
         {
@@ -57,10 +57,9 @@ public class WolfHand extends DefaultHandler
     }
     public void characters(char[] ch, int start, int length)throws SAXException
     {
-        if(inPlainText && inResults)
+        if(inPlainText)
         {
             ans += new String(ch, start, length);
-            System.out.println(ans);
         }
     }
     public String getAns()

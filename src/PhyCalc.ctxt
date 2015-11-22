@@ -1,10 +1,8 @@
 #BlueJ class context
 comment0.params=F\ m
-comment0.target=java.lang.String\ forceToPos(java.lang.String,\ java.lang.String)
+comment0.target=java.lang.String\ forceToAcc(java.lang.String,\ java.lang.String)
 comment1.params=I\ m
-comment1.target=double\ impulseToVel(double,\ double)
-comment2.params=val1\ val2\ res
-comment2.target=double\ der(double,\ double,\ double)
-comment3.params=val1\ val2\ res
-comment3.target=double\ integ(double,\ double,\ double)
-numComments=4
+comment1.target=java.lang.String\ impulseToVel(java.lang.String,\ java.lang.String)
+comment2.params=a
+comment2.target=java.lang.String\ accToPos(java.lang.String)
+numComments=3
