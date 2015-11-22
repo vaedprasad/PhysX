@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
+	<script type="text/javascript">
+		var input = textBar.value();
+
+		var pos = "";
+		<object codetype="application/java" classid="java:PhyCalc.class" archive="JAR.jar" width="740" height="400">
+		pos = accToPos(input, "0", "0")
+		</object>
+	</script>
   </head>
   <body>
   	<div class="contain-to-grid sticky">
@@ -39,10 +47,9 @@
 	<div class="row">
 		<div class="large-12 columns">
 			<div class="panel">
-				<input type="text" placeholder="Acceleration">textObject.value=text
-				<input/>
-				textObject
-				<object codetype="application/java" classid="java:PhyCalc.class" archive="JAR.jar" width="740" height="400"></object>
+				<input type="text" placeholder="Acceleration" class="textBar"/>
+				<button>Enter</button>
+				
 			</div>
 		</div>
 	</div>
