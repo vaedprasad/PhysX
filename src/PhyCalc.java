@@ -32,10 +32,14 @@ public class PhyCalc
         return "";
     }
 
-    public String accToPos(String a)
+    public String accToPos(String a, String vel, String pos)
     {
         try{
-            return Cal.useFunc(URLEncoder.encode("integral " + Cal.useFunc(URLEncoder.encode("integral " + a, "UTF-8")), "UTF-8"));
+            String v = Cal.useFunc(URLEncoder.encode("integral " + a, "UTF-8"));
+            v = v.substring(0, v.length()-8) + vel;
+            String x = Cal.useFunc(URLEncoder.encode("integral " + v, "UTF-8"));
+            x = x.substring(0, x.length()-8) + pos;
+            return x;
         }
         catch(Exception e)
         {
