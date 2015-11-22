@@ -11,7 +11,6 @@ public class WolfInter
         System.out.println(input);
         String xmlFile = "";
         String output;
-        System.out.println("\f");
         try {
             URL url = new URL("http://api.wolframalpha.com/v2/query?input="+input+"&appid=8EXQE5-6LURH4LLPH");
             BufferedReader reponce = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));

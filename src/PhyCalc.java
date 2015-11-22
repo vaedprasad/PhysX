@@ -34,15 +34,16 @@ public class PhyCalc
 
     public String accToPos(String a, String vel, String pos)
     {
+        //System.out.print("\f");
         try{
-            String v = Cal.useFunc(URLEncoder.encode("integral " + a, "UTF-8"));
-            v = v.substring(a.length() + 16, v.length()-8);
+            String v = Cal.useFunc(URLEncoder.encode("int " + a, "UTF-8"));
+            v = v.substring(a.length() + 15, v.length()-9);
             if(!vel.equals("0"))
-                v += vel;
-            String x = Cal.useFunc(URLEncoder.encode("integral " + v, "UTF-8"));
-            x = x.substring(v.length() + 16, x.length()-8);
+                v += "+" + vel;
+            String x = Cal.useFunc(URLEncoder.encode("int " + v, "UTF-8"));
+            x = x.substring(v.length() + 15, x.length()-9);
             if(!pos.equals("0"))
-                x += pos;
+                x += "+" + pos;
             return x;
         }
         catch(Exception e)
