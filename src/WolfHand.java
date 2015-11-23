@@ -48,7 +48,7 @@ public class WolfHand extends DefaultHandler
         {
             inResults  = false;
         }
-        //I suppose you can do the same thing I suggested above with a not... Ex. inResults != (localName.equals("pod") && inResults);
+        //I suppose you can do the same thing I suggested above with a not... Ex. inResults = !(localName.equals("pod") && inResults);
         else if(localName.equals("plaintext") && inResults)
         {
             inPlainText = false;
