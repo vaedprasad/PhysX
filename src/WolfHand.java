@@ -31,12 +31,13 @@ public class WolfHand extends DefaultHandler
                 inResults = true;
             }
             // From a stylistic standpoint, wouldn't it be easier to just say inResults = (attributes.getValue("id").equals("Result")|| attributes.getValue("id").equals("IndefiniteIntegral") || attributes.getValue("id").equals("Input"));
+            
         }
         else if(localName.equals("plaintext") && inResults)
         {
             inPlainText = true;
         }
-        //You can make the same change here
+        //You can make the same change here, I suppose.
         else
         {
             //I may just be inexperienced with Java, but do we want there to be something in the else statement? If not, what purpose does it serve?
@@ -49,11 +50,13 @@ public class WolfHand extends DefaultHandler
             inResults  = false;
         }
         //I suppose you can do the same thing I suggested above with a not... Ex. inResults = !(localName.equals("pod") && inResults);
+        //Actually, I don't think this would work. If inResults is already false, then going through this would make it true, which isn't what we want.
         else if(localName.equals("plaintext") && inResults)
         {
             inPlainText = false;
         }
         //Once again, the change would work here as well.
+        //The change would also not work here for the same reason I mentioned above.
         else
         {
             //I am still curious about the whole empty else statement. I've never seen this before. Haha.
