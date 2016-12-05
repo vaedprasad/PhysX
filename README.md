@@ -1,2 +1,2 @@
 # PhysX
-PhysX Dalton Hackathin
+PhysX Dalton Hackathon
